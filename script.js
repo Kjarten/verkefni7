@@ -19,8 +19,8 @@ function start() {
   const GAME_OVER = confirm('Spila annan leik?');
   if (GAME_OVER) {
     start();
-  } else {
-    break;
+  } else if(!GAME_OVER) {
+    exit ();
   }
 
 }
@@ -49,8 +49,8 @@ function play() {
       const GAME_OVER = confirm('Spila annan leik?');
       if (GAME_OVER) {
         start();
-      } else {
-        break;
+      } else if(!GAME_OVER) {
+        exit();
       }
     }
     let tac = new Date();
