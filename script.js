@@ -20,6 +20,7 @@ function start() {
   if (GAME_OVER) {
     start();
   } else {
+    break;
   }
 
 }
@@ -45,13 +46,19 @@ function play() {
       crrct = crrct + 1;
     } else if (ans === null) {
       alert('Hætt í leik');
-      start()
+      const GAME_OVER = confirm('Spila annan leik?');
+      if (GAME_OVER) {
+        start();
+      } else {
+        break;
+      }
     }
     let tac = new Date();
     t = (tac - tic)/1000;
   }
   alert('Þú svaraðir ' + crrct + ' af ' + GAMES_TO_PLAY + ' dæmum rétt á ' +
   t.toFixed(2) + ' sekúndum\nMeðalrétt svör á sekúndu eru ' + t.toFixed(2)/crrct);
+  return ans
 }
 
 /**
@@ -103,8 +110,8 @@ function operation(z) {
     sign = ' * ';
     break;
     case 4:
-    x = randomNumber(2, 10);
-    y = x * randomNumber(2, 10);
+    y = randomNumber(2, 10);
+    x = y * randomNumber(2, 10);
     sum = x / y;
     sign = ' / ';
     break;
