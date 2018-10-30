@@ -15,10 +15,10 @@ const GAMES_TO_PLAY = 10;
 
 function start() {
   alert('Markmiðið er að svara eins mörgum af 10 dæmum rétt eins hratt og mögulegt er.');
-  play()
+  play();
   const GAME_OVER = confirm('Spila annan leik?');
   if (GAME_OVER) {
-    start();
+    play();
   } else if(!GAME_OVER) {
     exit ();
   }
@@ -58,7 +58,7 @@ function play() {
   }
   alert('Þú svaraðir ' + crrct + ' af ' + GAMES_TO_PLAY + ' dæmum rétt á ' +
   t.toFixed(2) + ' sekúndum\nMeðalrétt svör á sekúndu eru ' + t.toFixed(2)/crrct);
-  return ans
+  return ans;
 }
 
 /**
@@ -79,7 +79,7 @@ function ask() {
   let z = randomNumber(1,4);
   operation(z);
   ans = prompt('Hvað er ' + x + sign + y + '?');
-  return ans, sum
+  return ans, sum;
 }
 
 /**
@@ -116,7 +116,7 @@ function operation(z) {
     sign = ' / ';
     break;
   }
-  return x, y, sum, sign
+  return x, y, sum, sign;
 }
 
 // Byrjar leik
